@@ -1,0 +1,15 @@
+@prefix acdh: <https://vocabs.acdh.oeaw.ac.at/schema#> .
+@prefix acdhi: <https://id.acdh.oeaw.ac.at/> .
+
+<https://foo/bar> acdh:hasLicense <https://vocabs.acdh.oeaw.ac.at/archelicenses/cc-by-4-0> ;
+    acdh:hasContact <https://d-nb.info/gnd/132150654> ;
+    acdh:hasDepositor <https://d-nb.info/gnd/132150654> ;
+    acdh:hasMetadataCreator acdhi:pandorfer ;
+    acdh:hasLicensor acdhi:privateHands ;
+    acdh:hasOwner acdhi:privateHands ;
+    acdh:hasAuthor <https://d-nb.info/gnd/118571869>;
+    acdh:hasActor <https://d-nb.info/gnd/118571869>;
+     
+    acdh:hasRightsInformation """Die Lizenzangabe bezieht sich auf verwandte Schutzrechte, die im Zuge der Digitalisierung entstehen. Da das Urheberrecht erloschen ist, sind die Inhalte gemeinfrei. Die Originale befinden sich im Eigentum von privaten Händen."""@de ;
+    acdh:hasRightsInformation "The licence specified refers to related rights arising in the course of digitisation. Since the copyright has expired, the content is in the public domain. The originals are in the property of private hands."@en ;
+    acdh:hasRightsHolder acdhi:none .

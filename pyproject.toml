@@ -1,0 +1,11 @@
+[project]
+name = "leopold-briefe-images"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "pandas>=3.0.5",
+    "rdflib>=7.6.0",
+    "requests>=2.34.2",
+]

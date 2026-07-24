@@ -1,0 +1,77 @@
+@prefix acdh: <https://vocabs.acdh.oeaw.ac.at/schema#>.
+@prefix acdhi: <https://id.acdh.oeaw.ac.at/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://id.acdh.oeaw.ac.at/leopold-briefe> a acdh:TopCollection;
+  acdh:hasTitle """Eigenhändige Korrespondenz Kaiser Leopolds I. Digitale Edition"""@de;
+  acdh:hasTitle """Autograph Correspondence of Emperor Leopold I. Digital Edition"""@en;
+  acdh:hasPid "https://hdl.handle.net/21.11115/0000-0021-929B-7";
+  acdh:hasDescription """Diese Sammlung enthält die Scans der eigenhändigen Korrespondenz Kaiser Leopolds I."""@de;
+  acdh:hasDescription """This collection contains the scans of the autograph correspondence of Emperor Leopold I."""@en;
+  acdh:hasSpatialCoverage <https://sws.geonames.org/6255148/>;
+  # Europa
+  acdh:hasTemporalCoverage """Frühe Neuzeit"""@de;
+  acdh:hasTemporalCoverage """Early Modern Period"""@en;
+  # acdh:hasUrl "https://leopold-briefe.acdh.oeaw.ac.at";
+  acdh:hasLifeCycleStatus <https://vocabs.acdh.oeaw.ac.at/archelifecyclestatus/active>;
+  acdh:hasCompleteness """Die Sammlung enthält aktuell nur die Scans der Briefe, wird 2027 aber um annotierte Transkriptionen der Briefe (und ergänzenden Materialien) im TEI/XML Format erweitert."""@de;
+  acdh:hasCompleteness """The collection currently contains only scans of the letters but will be expanded in 2027 to include annotated transcriptions of the letters (and supplementary materials) in TEI/XML format."""@en;
+  acdh:hasSubject "Korrespondenz"@de;
+  acdh:hasSubject "Correspondence"@en;
+  acdh:hasSubject "Faksimiles"@de;
+  acdh:hasSubject "Facsimiles"@en;
+  acdh:hasSubject "Digitale Edition"@de;
+  acdh:hasSubject "Digital Edition"@en;
+  acdh:hasLanguage <https://vocabs.acdh.oeaw.ac.at/iso6393/deu>;
+  acdh:hasCoverageStartDate "1653-01-01"^^xsd:date;
+  acdh:hasCoverageEndDate "1705-12-31"^^xsd:date;
+  acdh:hasRelatedDiscipline <https://vocabs.acdh.oeaw.ac.at/oefosdisciplines/601009>;
+  # Historische Hilfswissenschaften
+  acdh:hasRelatedDiscipline <https://vocabs.acdh.oeaw.ac.at/oefosdisciplines/601014>;
+  # Neuere Geschichte
+  acdh:hasCurator acdhi:pandorfer;
+  acdh:hasDepositor <https://d-nb.info/gnd/132150654>;
+  # Petr Maťa
+  acdh:hasMetadataCreator acdhi:pandorfer;
+  acdh:hasContact <https://d-nb.info/gnd/132150654>;
+  # Petr Maťa
+  acdh:hasPrincipalInvestigator <https://d-nb.info/gnd/132150654>;
+  # Petr Maťa
+  acdh:hasEditor <https://d-nb.info/gnd/132150654>;
+  # Petr Maťa
+  acdh:hasAuthor <https://d-nb.info/gnd/118571869>;
+  acdh:hasActor <https://d-nb.info/gnd/118571869>;
+  acdh:hasCreatedStartDate "2026-07-01"^^xsd:date.
+
+
+<https://id.acdh.oeaw.ac.at/leopold-briefe/facs> a acdh:Collection;
+  acdh:hasContact <https://d-nb.info/gnd/132150654>;
+  acdh:hasContact <https://d-nb.info/gnd/132150654>;
+  acdh:hasTitle """Leopold I. Briefe: Faksimiles"""@de;
+  acdh:hasTitle """Leopold I. letters: Facsimiles"""@en;
+  acdh:isPartOf <https://id.acdh.oeaw.ac.at/leopold-briefe>;
+  acdh:hasDescription """Diese Sammlung enthält die Faksimiles der Briefe Leopold I."""@de;
+  acdh:hasDescription """This collection contains the facsimiles of the letters of Leopold I."""@en;
+  acdh:hasCurator acdhi:pandorfer;
+  acdh:hasDepositor <https://d-nb.info/gnd/132150654>;
+  # Petr Maťa
+  acdh:hasMetadataCreator acdhi:pandorfer.
+
+<https://id.acdh.oeaw.ac.at/leopold-briefe/facs/ooela> a acdh:Collection;
+  acdh:hasDigitisingAgent <https://d-nb.info/gnd/132150654>;
+  # Petr Maťa
+  acdh:hasLicense <https://vocabs.acdh.oeaw.ac.at/archelicenses/cc-by-4-0>;
+  acdh:hasTitle """Leopold I. Briefe: Faksimiles aus dem Oberösterreichischen Landesarchiv (OÖLA)"""@de;
+  acdh:hasTitle """Leopold I. letters: Facsimiles from the Upper Austrian State Archives (OÖLA)"""@en;
+  acdh:hasCurator acdhi:pandorfer;
+  acdh:hasDepositor <https://d-nb.info/gnd/132150654>;
+  # Petr Maťa
+  acdh:hasMetadataCreator acdhi:pandorfer;
+  acdh:isPartOf <https://id.acdh.oeaw.ac.at/leopold-briefe/facs>;
+  acdh:hasDescription """Diese Sammlung enthält die Scans der Briefe Leopold I. aus dem Oberösterreichischen Landesarchiv (OÖLA)"""@de;
+  acdh:hasDescription """This collection contains the scans of the letters of Leopold I. from the Upper Austrian State Archives (OÖLA)."""@en.
+
+<https://d-nb.info/gnd/132150654> a acdh:Person;
+  acdh:hasFirstName "Petr"@und;
+  acdh:hasLastName "Maťa"@und.
+
