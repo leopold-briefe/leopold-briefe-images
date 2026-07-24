@@ -7,8 +7,6 @@ fi
 
 uv run src/arche.py
 
-
-
 echo "ingest metadata for for ${TOPCOLID} into ${ARCHE}"
 docker run --rm \
   -v ${PWD}/to_ingest:/data \
