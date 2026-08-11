@@ -7,7 +7,7 @@
 # Uses gdal_translate for the LZW compression and then copies
 # image metadata using the exiftool
 
-IMG_DIR="/home/csae8092/Schreibtisch/ACDH_DHRI_leopoldBriefe/scans/OÖLA"
+IMG_DIR="/mnt/projects/ACDH_DHRI_leopoldBriefe/scans/OÖLA"
 
 if [ ! -d "$IMG_DIR" ] ; then
     echo "IMG_DIR does not exist: $IMG_DIR"
