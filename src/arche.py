@@ -5,7 +5,7 @@ import sys
 
 import pandas as pd
 import requests
-from rdflib import RDF, Graph, Literal, Namespace, URIRef
+from rdflib import RDF, XSD, Graph, Literal, Namespace, URIRef
 
 from utils import make_title, signatur_and_license
 
@@ -62,6 +62,7 @@ def add_shared_properties(graph: Graph, subject: URIRef, license_uri: str) -> No
             URIRef("https://id.acdh.oeaw.ac.at/pandorfer"),
         )
     )
+    graph.add((subject, ACDH["hasAuthor"], URIRef("https://d-nb.info/gnd/118571869")))
 
 
 with open("fc_reports/OÖLA/fileList.json", "r", encoding="utf-8") as fp:
@@ -92,6 +93,14 @@ for folder, ndf in df.groupby("directory"):
     g.add((subj, ACDH["hasExtent"], Literal(f"{len(ndf)} Seiten", lang="de")))
     g.add((subj, ACDH["hasTag"], Literal("IMAGE", lang="de")))
     previous_item = subj
+    if metadata["not_before"]:
+        g.add(
+            (
+                subj,
+                ACDH["hasCoverageStartDate"],
+                Literal(metadata["not_before"], datatype=XSD.date),
+            )
+        )
     for i, (_, row) in enumerate(ndf.iterrows(), start=1):
         f_name = row["filename"]
         img_subj = URIRef(f"{TOP_COL_URI}/{f_name}")
@@ -102,6 +111,14 @@ for folder, ndf in df.groupby("directory"):
         g.add((img_subj, ACDH["hasTitle"], Literal(facs_title, lang="de")))
         g.add((img_subj, ACDH["hasCategory"], URIRef(row["hasCategory"])))
         g.add((img_subj, ACDH["hasNonLinkedIdentifier"], Literal(signatur)))
+        if metadata["not_before"]:
+            g.add(
+                (
+                    img_subj,
+                    ACDH["hasCoverageStartDate"],
+                    Literal(metadata["not_before"], datatype=XSD.date),
+                )
+            )
         add_shared_properties(g, img_subj, license)
         previous_item = img_subj
 
