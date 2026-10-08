@@ -1,59 +1,16 @@
-# kalbeck-images
+# Leopold Briefe Images
 
-Throw-away code repo to process kalbeck images.
-
-## issues
-
-(checked kalbeck_2 bis kalbeck_2__0100_b)
-
-### Seiten herausgeschnitten?
-
-* kalbeck_2__0041_a.tif -> 14. März
-* kalbeck_2__0041_b.tif -> 17. März
-
-### doppelt gescannt
-
-* kalbeck_2__0063_a.tif sameAs kalbeck_2__0064_a.tif
-* kalbeck_2__0063_b.tif sameAs kalbeck_2__0064_b.tif
-
-## compress
+Repo to generate ARCHE-RDF for Leopold-Briefe Facsimiles
 
 copied from <https://github.com/acdh-oeaw/arche-curationTools/blob/master/tif_lzw.sh>
 
-```bash
-./src/compress_tiffs.sh orig-files
+## image processing
+
+```shell
+./src/compress_tiffs.sh
 ```
 
-## split
-
-written by <https://chatgpt.com/>
-
-```bash
-uv run src/split_pages.py orig-files/  --output split/ --threshold 6600 --margin 80
-```
-
-## filechecker
-
-adapt input and ouput folder
-
-```bash
-./src/arche__filechecker.sh
-```
-
-e.g.
-
-```bash
-echo "run filechecker"
-rm -rf ${PWD}/kalbeck_2 && mkdir ${PWD}/kalbeck_2
-docker run \
-  --rm \
-  --network="host" \
-  -v ${PWD}/kalbeck_2:/reports \
-  -v /home/csae8092/Schreibtisch/R_kalbeck_27373/kalbeck/kalbeck_2/splitted:/data \
-  --entrypoint arche-filechecker \
-  acdhch/arche-ingest \
-  --overwrite --skipWarnings /data /reports
-```
+adapt path to files you want to lzw-compress and run the script
 
 ## ARCHE metadaten
 
