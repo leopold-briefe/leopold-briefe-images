@@ -11,7 +11,8 @@ wheels/
 /orig-files
 /split
 secret.env
-/to_ingest
+# /to_ingest
 /images
 
 tmp.*
+!to_ingest/arche.ttl
